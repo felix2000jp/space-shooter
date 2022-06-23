@@ -45,20 +45,27 @@ export default class GameScene extends Phaser.Scene {
   public create = (): void => {
     this.background = new Background(this, 500, 400, 1000, 800);
 
-    this.start_enemy_1          = 0;     
+        this.start_enemy_1          = 0;     
     this.spawn_enemy_1_interval = 2_000;
+
     this.start_enemy_2          = 5_000;
     this.spawn_enemy_2_interval = 3_000;
+
     this.start_enemy_3          = 5_000;
-    this.spawn_enemy_3_interval = 4_000;
+    this.spawn_enemy_3_interval = 5_000;
+
     this.start_enemy_4          = 10_000;
-    this.spawn_enemy_4_interval = 5_000;
+    this.spawn_enemy_4_interval = 6_000;
+
     this.start_enemy_5          = 10_000;
-    this.spawn_enemy_5_interval = 6_000;
+    this.spawn_enemy_5_interval = 7_000;
+
     this.start_enemy_6          = 15_000;
-    this.spawn_enemy_6_interval = 7_500;
-    this.start_enemy_7          = 20_000;
+    this.spawn_enemy_6_interval = 7_000;
+
+    this.start_enemy_7          = 15_000;
     this.spawn_enemy_7_interval = 8_000;
+    
     this.spawn_locations = [50, 100, 150, 200, 250, 300, 350];
 
     this.player         = new Player(this, 250, 200);
@@ -121,12 +128,12 @@ export default class GameScene extends Phaser.Scene {
     bullet.destroy(); // We destroy the bullet
   }
 
-// Enemy Spawns
+  // Enemy Spawns
   private spawn_enemy_1 = () => {
     if (this.time.now - this.start_game_time > this.start_enemy_1) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy1(this, location, 0));
-      this.start_enemy_1 = this.time.now + this.spawn_enemy_1_interval;
+      this.start_enemy_1 = this.time.now - this.start_game_time + this.spawn_enemy_1_interval;
     }
   }
 
@@ -134,7 +141,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_2) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy2(this, location, 0));
-      this.start_enemy_2 = this.time.now + this.spawn_enemy_2_interval;
+      this.start_enemy_2 = this.time.now - this.start_game_time + this.spawn_enemy_2_interval;
     }
   }
 
@@ -142,7 +149,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_3) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy3(this, location, 0));
-      this.start_enemy_3 = this.time.now + this.spawn_enemy_3_interval;
+      this.start_enemy_3 = this.time.now - this.start_game_time + this.spawn_enemy_3_interval;
     }
   }
 
@@ -150,7 +157,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_4) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy4(this, location, 0));
-      this.start_enemy_4 = this.time.now + this.spawn_enemy_4_interval;
+      this.start_enemy_4 = this.time.now - this.start_game_time + this.spawn_enemy_4_interval;
     }
   }
 
@@ -158,7 +165,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_5) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy5(this, location, 0));
-      this.start_enemy_5 = this.time.now + this.spawn_enemy_5_interval;
+      this.start_enemy_5 = this.time.now - this.start_game_time  + this.spawn_enemy_5_interval;
     }
   }
 
@@ -166,7 +173,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_6) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy6(this, location, 0));
-      this.start_enemy_6 = this.time.now + this.spawn_enemy_6_interval;
+      this.start_enemy_6 = this.time.now - this.start_game_time + this.spawn_enemy_6_interval;
     }
   }
 
@@ -174,7 +181,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.time.now - this.start_game_time > this.start_enemy_7) {
       const location = this.spawn_locations[Math.floor(Math.random() * this.spawn_locations.length)];
       this.enemies.add(new Enemy7(this, location, 0));
-      this.start_enemy_7 = this.time.now + this.spawn_enemy_7_interval;
+      this.start_enemy_7 = this.time.now - this.start_game_time + this.spawn_enemy_7_interval;
     }
   }
 }
