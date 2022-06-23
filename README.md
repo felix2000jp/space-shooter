@@ -4,4 +4,4 @@ To play go to https://felix2000jp.github.io/space-shooter/.
 You can also download the source code and run yarn install and then yarn dev.
 
 Here is a preview:
-[https://github.com/felix2000jp/space-shooter/blob/main/public/space-shooter-cover.png]
+[screenshot](https://github.com/felix2000jp/space-shooter/blob/main/public/space-shooter-cover.png)
