@@ -22,7 +22,7 @@ export default class MainMenuScene extends Phaser.Scene {
 
     // We init a registry for values that are going to be shared between scenes
     this.registry.set('score' , 0);
-    this.registry.set('health', 10);
+    this.registry.set('health', 100);
   }
 
   public update = () => {
